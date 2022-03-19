@@ -108,9 +108,13 @@ myTable6 = {}
 setmetatable(myTable6,meta6)
 
 --当子表中找不到某一属性时，会寻找元表__index指向的索引的表，依次往上寻找属性
---__index用于存储一些子表需要使用的属性和方法
+--__index用于存储一些子表通用的需要使用的属性和方法
 meta6.__index = meta6
 print(myTable6.name)
+myTable6.name = "myTalbe6"
+print("meta6:"..meta6.name)
+print(myTable6.name)
+print("meta6:"..meta6.name)
 --rawget() --在自己表里找
 
 deLog("制定操作-_newindex")
